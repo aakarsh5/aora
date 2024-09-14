@@ -19,20 +19,27 @@ const SignIn = () => {
   const submit = async () => {
     if (form.email === "" || form.password === "") {
       Alert.alert("Error", "Please fill in all fields");
+      return; // Prevent submission if fields are empty
     }
 
     setSubmitting(true);
 
     try {
+      // Attempt to sign in
       await signIn(form.email, form.password);
-      const result = await getCurrentUser();
+
+      const result = await getCurrentUser(); // Fetch the current user
+      if (!result) {
+        throw new Error("Failed to retrieve user details.");
+      }
+
       setUser(result);
       setIsLogged(true);
 
       Alert.alert("Success", "User signed in successfully");
-      router.replace("/home");
+      router.replace("/home"); // Navigate to the home screen
     } catch (error) {
-      Alert.alert("Error", error.message);
+      Alert.alert("Error", error.message); // Display error message
     } finally {
       setSubmitting(false);
     }
@@ -54,7 +61,7 @@ const SignIn = () => {
           />
 
           <Text className="text-2xl font-semibold text-white mt-10 font-psemibold">
-            Log in to Aora
+            Log in to FarmVerse
           </Text>
 
           <FormField

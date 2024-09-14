@@ -36,9 +36,8 @@ const Welcome = () => {
 
           <View className="relative mt-5">
             <Text className="text-3xl text-white font-bold text-center">
-              Discover Endless{"\n"}
-              Possibilities with{" "}
-              <Text className="text-secondary-200">Aora</Text>
+              Find Solution{"\n"}
+              For Problems <Text className="text-secondary-200">FarmVerse</Text>
             </Text>
 
             <Image
@@ -49,8 +48,7 @@ const Welcome = () => {
           </View>
 
           <Text className="text-sm font-pregular text-gray-100 mt-7 text-center">
-            Where Creativity Meets Innovation: Embark on a Journey of Limitless
-            Exploration with Aora
+            Where You Can Get Help For Your Farm & LiveStock
           </Text>
 
           <CustomButton
